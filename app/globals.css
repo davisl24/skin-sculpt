@@ -21,3 +21,23 @@
 .contactV2{display:flex;flex-direction:column;gap:40px;align-items:stretch}.mapV2{min-height:300px}.footerV2{padding:44px 20px;grid-template-columns:1fr 1fr}.footerV2>.brand,.footerV2>p{grid-column:1/-1}
 .endoHero,.endoBenefits,.endoAbout,.endoProof,.endoCta,.endoPricing{padding:60px 20px}.benefitGrid{grid-template-columns:1fr 1fr}.priceGrid{grid-template-columns:1fr}.endoProof{grid-template-columns:repeat(3,1fr)}
 }
+/* V2.1 anti-template art direction */
+.proceduresV21 .sectionHead{margin-bottom:38px}
+.serviceTiles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.serviceTile{position:relative;aspect-ratio:1.35;overflow:hidden;border-radius:7px;background:var(--cream);display:flex;align-items:flex-end}
+.serviceTileShade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(36,33,31,.30),rgba(36,33,31,0) 58%)}
+.serviceTileLabel{position:relative;z-index:1;width:100%;padding:24px;display:flex;align-items:flex-end;justify-content:space-between;gap:20px;color:#fff}
+.serviceTileLabel h3{font:400 28px/1.05 "Bodoni Moda",serif;margin:0;letter-spacing:-.025em}
+.serviceTileLabel span{font-size:21px}
+.storyZone{background:var(--paper)}
+.storyZone .aboutV2{padding-bottom:70px}
+.teamV21{padding-top:34px}
+@media(max-width:760px){
+.proceduresV21 .sectionHead{margin-bottom:26px}
+.serviceTiles{grid-template-columns:1fr;gap:14px}
+.serviceTile{aspect-ratio:16/8.7}
+.serviceTileLabel{padding:20px}
+.serviceTileLabel h3{font-size:27px}
+.storyZone .aboutV2{padding-bottom:42px}
+.teamV21{padding-top:22px}
+}
