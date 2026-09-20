@@ -63,3 +63,12 @@
 .firstVisitV2{padding:60px 20px}
 .firstVisitV2 h2{font-size:33px}
 }
+
+/* V2.4 mobile composition */
+@media(max-width:760px){
+.clinicHeroInner{align-items:center;text-align:center}
+.clinicHeroInner>p:not(.eyebrow){max-width:560px}
+.firstVisitV2>div{text-align:center}
+.firstVisitV2 p:not(.eyebrow){margin:20px auto 16px;max-width:590px}
+.firstVisitEyebrow{display:block;margin-bottom:16px}
+}
