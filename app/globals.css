@@ -41,3 +41,11 @@
 .storyZone .aboutV2{padding-bottom:42px}
 .teamV21{padding-top:22px}
 }
+
+/* V2.2 final small QA */
+.reviewsProofOnly{display:block}
+.reviewsProofOnly .reviewsScore{max-width:1192px;margin:auto}
+.reviewsProofOnly .reviewsScore .textLink{display:inline-block;margin-top:14px}
+@media(max-width:760px){
+.serviceTile{aspect-ratio:16/7.4}
+}
