@@ -72,3 +72,18 @@
 .firstVisitV2 p:not(.eyebrow){margin:20px auto 16px;max-width:590px}
 .firstVisitEyebrow{display:block;margin-bottom:16px}
 }
+
+/* V2.5 final mobile readability + real map */
+.mapEmbedV2{min-height:380px;border-radius:7px;overflow:hidden;position:relative;background:var(--cream)}
+.mapEmbedV2 iframe{width:100%;height:380px;border:0;display:block}
+.mapEmbedV2>a{position:absolute;left:18px;bottom:18px;background:var(--paper);padding:11px 14px;border-radius:7px;font-size:12px;font-weight:600}
+@media(max-width:760px){
+.clinicHeroInner{justify-content:flex-start;padding-top:31svh;padding-bottom:30px}
+.clinicHeroInner h1{font-size:46px;font-weight:500}
+.sectionHead h2,.aboutV2 h2,.contactV2 h2{font-size:35px;font-weight:500}
+.teamCard h3{font-weight:500}
+.realReviews article p{font-size:20px;font-weight:500}
+.firstVisitV2 h2{font-size:33px;font-weight:500}
+.mapEmbedV2{min-height:300px}
+.mapEmbedV2 iframe{height:300px}
+}
