@@ -100,3 +100,48 @@
 .mapEmbedV2{min-height:0;border-radius:16px}
 .mapEmbedV2 iframe{height:300px}
 }
+
+/* V2.7 mobile UX lock */
+.reviewProgress{display:none}
+
+@media(max-width:760px){
+/* About: copy first, image second */
+.aboutV2{display:flex;flex-direction:column}
+.aboutV2 .aboutCopy{order:1}
+.aboutV2 .aboutImage{order:2}
+
+/* Mobile typography: Bodoni only for brand moments */
+.sectionHead h2,
+.aboutV2 h2,
+.teamCard h3,
+.serviceTileLabel h3,
+.realReviews article p{
+  font-family:Manrope,Arial,sans-serif;
+  letter-spacing:-.02em;
+  font-weight:600;
+}
+.sectionHead h2,.aboutV2 h2{font-size:32px;line-height:1.08}
+.teamCard h3{font-size:18px;line-height:1.2}
+.serviceTileLabel h3{font-size:20px;line-height:1.1}
+.realReviews article p{font-size:18px;line-height:1.45;font-weight:500}
+
+/* Keep Bodoni for key brand moments */
+.clinicHeroInner h1,
+.reviewsScore strong,
+.firstVisitV2 h2,
+.contactV2 h2{
+  font-family:"Bodoni Moda",serif;
+  font-weight:500;
+}
+
+/* Reviews: clearer swipe affordance */
+.reviewCards{gap:14px;margin-top:28px;scrollbar-width:none}
+.reviewCards::-webkit-scrollbar{display:none}
+.reviewCards article{min-width:85%;min-height:150px;padding:24px 20px}
+.reviewProgress{display:block;width:96px;height:2px;background:var(--line);margin:16px auto 0;position:relative;overflow:hidden}
+.reviewProgress span{display:block;width:34px;height:100%;background:var(--ink);transform:translateX(0)}
+
+/* Map cleanup */
+.mapEmbedV2{overflow:hidden;border-radius:16px}
+.mapEmbedV2>a{display:none!important}
+}
