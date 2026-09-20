@@ -49,3 +49,17 @@
 @media(max-width:760px){
 .serviceTile{aspect-ratio:16/7.4}
 }
+
+/* V2.3 review cards + final mobile proportions */
+.reviewsWithCards{display:grid;grid-template-columns:.65fr 2fr;gap:70px}
+.realReviews article{min-height:180px;display:flex;flex-direction:column;justify-content:space-between}
+.realReviews article p{font:400 22px/1.35 "Bodoni Moda",serif;margin:0}
+.realReviews article span{margin-top:28px}
+@media(max-width:760px){
+.clinicHero{height:67svh;min-height:540px}
+.reviewsWithCards{display:block}
+.realReviews{margin-top:30px}
+.realReviews article{min-height:170px}
+.firstVisitV2{padding:60px 20px}
+.firstVisitV2 h2{font-size:33px}
+}
