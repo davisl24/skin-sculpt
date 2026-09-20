@@ -145,3 +145,106 @@
 .mapEmbedV2{overflow:hidden;border-radius:16px}
 .mapEmbedV2>a{display:none!important}
 }
+
+/* V2.8 mobile consistency pass */
+.proofStripWrap{background:var(--sand)}
+.proofProgress{display:none}
+
+@media(max-width:760px){
+/* One coherent mobile type system */
+.aboutV2 h2{
+  font-family:"Bodoni Moda",serif;
+  font-weight:500;
+  font-size:34px;
+  line-height:1.05;
+  letter-spacing:-.035em;
+}
+.sectionHead h2{
+  font-family:Manrope,Arial,sans-serif;
+  font-weight:600;
+  font-size:32px;
+  line-height:1.08;
+  letter-spacing:-.03em;
+}
+.serviceTileLabel h3,
+.teamCard h3,
+.realReviews article p{
+  font-family:Manrope,Arial,sans-serif;
+}
+
+/* Procedures: lighter, shorter navigation cards */
+.proceduresV21{padding-top:64px;padding-bottom:64px}
+.proceduresV21 .sectionHead{margin-bottom:28px}
+.serviceTiles{gap:16px}
+.serviceTile{aspect-ratio:auto;height:232px;border-radius:12px}
+.serviceTileLabel{padding:18px 20px}
+.serviceTileLabel h3{font-size:20px;line-height:1.15;font-weight:600}
+.serviceTileLabel span{font-size:19px}
+
+/* Proof: same visual language as desktop, adapted to horizontal mobile swipe */
+.proofStripWrap{padding:0 0 18px}
+.proofStrip{
+  display:flex;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scrollbar-width:none;
+  gap:0;
+  padding:30px 20px 26px;
+}
+.proofStrip::-webkit-scrollbar{display:none}
+.proofStrip div{
+  flex:0 0 44vw;
+  min-width:160px;
+  scroll-snap-align:start;
+  padding:0 24px 0 0;
+  margin-right:24px;
+  border-right:1px solid rgba(36,33,31,.14);
+}
+.proofStrip div:first-child{padding-left:0}
+.proofStrip div:last-child{margin-right:0;border-right:0}
+.proofStrip strong{font:500 40px/1 "Bodoni Moda",serif}
+.proofStrip span{font:500 14px/1.35 Manrope,Arial,sans-serif;margin-top:10px;color:var(--muted)}
+.proofProgress{
+  display:block;
+  width:96px;
+  height:2px;
+  background:var(--line);
+  margin:0 auto;
+  overflow:hidden;
+}
+.proofProgress span,
+.reviewProgress span{
+  display:block;
+  width:34px;
+  height:100%;
+  background:var(--ink);
+  transition:transform .08s linear;
+}
+
+/* About: restore brand serif heading, image-first mobile flow */
+.aboutV2 .aboutImage{order:1;aspect-ratio:4/3;border-radius:12px}
+.aboutV2 .aboutCopy{order:2}
+.aboutV2{gap:34px}
+.aboutCopy>p:not(.eyebrow){font-size:15px;line-height:1.7;margin:20px 0}
+
+/* Team remains functional and readable */
+.teamV21{padding-top:28px}
+.teamGrid{gap:24px 16px}
+.teamCard h3{font-size:18px;font-weight:600;margin-top:12px}
+
+/* Reviews: one clear card + peek, less visual weight */
+.reviewsV2{padding:60px 20px}
+.reviewsScore strong{font-size:52px}
+.reviewsScore>p{font-size:15px;margin:10px 0 0}
+.reviewCards{gap:14px;margin-top:26px}
+.reviewCards article{min-width:86%;min-height:176px;padding:24px 22px;border-radius:12px}
+.realReviews article p{font-size:18px;line-height:1.45;font-weight:500;letter-spacing:-.015em}
+.realReviews article span{font-size:11px;margin-top:22px}
+.reviewProgress{margin-top:18px}
+
+/* Tighten CTA/contact rhythm without changing their visual identity */
+.firstVisitV2{padding:58px 20px}
+.contactV2{gap:32px}
+.mapEmbedV2{border-radius:18px}
+.mapEmbedV2 iframe{height:270px}
+}
