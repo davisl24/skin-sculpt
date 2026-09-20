@@ -19,3 +19,15 @@
 .mobileBook{display:block;position:fixed;z-index:20;bottom:max(12px,env(safe-area-inset-bottom));left:50%;width:min(340px,calc(100% - 40px));text-align:center;background:var(--ink);color:var(--paper);padding:12px 18px;border-radius:8px;font-weight:600;font-size:13px;opacity:0;transform:translate(-50%,18px);pointer-events:none;box-shadow:0 8px 28px rgba(36,33,31,.13);transition:.22s}.mobileBook.isVisible{opacity:1;transform:translate(-50%,0);pointer-events:auto}
 .endoPage .nav>.button{display:none}.endoHero{padding:44px 20px 76px;display:block}.endoHero h1{font-size:50px}.endoHeroVisual{aspect-ratio:16/11;margin-top:40px}.benefitGrid{grid-template-columns:1fr 1fr;gap:20px}.endoPricing{padding:72px 20px}.priceGrid{grid-template-columns:1fr;gap:34px}.endoAbout{display:block}.endoAbout>div:last-child{aspect-ratio:16/11;margin-top:38px}.endoProof{margin:0 20px 72px;grid-template-columns:repeat(3,1fr);gap:12px}.endoProof b{font-size:30px}.endoProof span{font-size:9px}.endoCta{padding:80px 20px}.endoFooter{grid-template-columns:1fr}
 }
+/* Full hero composition */
+.hero{display:block;max-width:none;width:100%;padding:0;position:relative}
+.heroVisual{width:100%;height:calc(100svh - 86px);min-height:620px;aspect-ratio:auto;border-radius:0;position:relative;background:var(--cream)}
+.heroOverlay{position:absolute;inset:0;display:flex;align-items:center;padding:60px max(24px,calc((100vw - 1192px)/2))}
+.heroOverlay .heroContent{max-width:590px}
+@media(max-width:760px){
+.hero{padding:0}
+.heroVisual{height:calc(100svh - 70px);min-height:650px;margin:0;border-radius:0;aspect-ratio:auto}
+.heroOverlay{align-items:flex-end;padding:52px 20px 58px}
+.heroOverlay .heroContent{width:100%;max-width:520px}
+.heroOverlay .heroTrust{margin-top:30px}
+}
