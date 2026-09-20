@@ -19,3 +19,34 @@
 a{color:var(--ink)} button{color:var(--ink)} .reviewNav button{color:var(--ink);border:1px solid rgba(36,33,31,.28);background:transparent;border-radius:50%;width:36px;height:36px;padding:0;display:grid;place-items:center}.reviews{padding-top:112px;padding-bottom:112px}.reviewsInner{align-items:start}.quoteMark{font-size:64px;line-height:.75;margin-bottom:22px}.quote>p{font-size:clamp(32px,3.35vw,48px);line-height:1.22;letter-spacing:-.025em;max-width:820px}.reviewNav{margin-top:42px}.firstVisit{min-height:72vh}.featureInner{grid-template-columns:.58fr 1.42fr}.featureVisual{aspect-ratio:1.35}.teamEditorial{margin-top:72px}.person2,.person4{margin-top:74px}
 @media(max-width:760px){
 .hero h1{font-size:clamp(52px,14.5vw,66px);line-height:.98;letter-spacing:-.04em}.section{padding:86px 20px}.section h2{font-size:44px;line-height:1.04}.goalEditorial{margin-top:46px}.goal{margin-bottom:54px}.goal:nth-child(2){width:78%}.goal:nth-child(3){width:86%;margin-bottom:0}.feature{padding:78px 20px}.featureInner{gap:38px}.feature h2{font-size:46px;line-height:1.02}.featureMeta{margin-top:29px}.aboutTop{gap:25px}.aboutTop h2 br{display:none}.aboutVisual{margin-top:43px}.stats{margin-top:24px;padding-top:22px}.stats b{font-size:34px}.stats span{font-size:9px;line-height:1.35}.teamEditorial{margin-top:45px;gap:30px 14px}.person2,.person4{margin-top:38px}.person h3{font-size:22px}.person p{font-size:10px}.reviews{padding:76px 20px}.reviewsInner{gap:30px}.rating b{font-size:52px}.quoteMark{font-size:46px;margin:4px 0 13px}.quote>p{font-size:29px;line-height:1.3;margin:0 0 22px}.reviewNav{margin-top:29px}.reviewNav button{width:34px;height:34px;font-size:14px}.firstVisit{min-height:auto;padding:100px 20px}.firstVisit h2{font-size:49px;line-height:1.02}.contact{padding-bottom:92px}.siteFooter{padding-bottom:92px}.mobileBook{left:20px;right:20px;padding:13px 18px;opacity:0;transform:translateY(18px);pointer-events:none;box-shadow:0 8px 28px rgba(36,33,31,.13);transition:opacity .22s ease,transform .22s ease}.mobileBook.isVisible{opacity:1;transform:translateY(0);pointer-events:auto}}
+
+/* Final layout rhythm pass */
+.hero h1,.section h2,.feature h2,.firstVisit h2,.goal h3,.person h3{text-wrap:balance}
+@media(min-width:761px){
+  .section{padding-top:112px;padding-bottom:112px}
+  .goalEditorial{margin-top:64px;row-gap:70px}
+  .feature{padding-top:104px;padding-bottom:104px}
+  .aboutVisual{margin-top:68px}
+  .teamEditorial{margin-top:58px}
+  .reviews{padding-top:96px;padding-bottom:96px}
+  .firstVisit{min-height:64vh;padding-top:96px;padding-bottom:96px}
+}
+@media(max-width:760px){
+  .hero{padding-top:18px}
+  .heroContent{transform:translateY(-4vh)}
+  .section{padding-top:72px;padding-bottom:72px}
+  .goalEditorial{margin-top:38px}
+  .goal{margin-bottom:44px}
+  .goal .visual,.goalLarge .visual,.goalTop .visual,.goalBottom .visual{aspect-ratio:3/4}
+  .goal:nth-child(2),.goal:nth-child(3){width:100%;margin-left:0;margin-right:0}
+  .goal h3{margin-top:14px}
+  .feature{padding-top:70px;padding-bottom:70px}
+  .aboutVisual{aspect-ratio:3/4}
+  .team{padding-top:66px}
+  .teamEditorial{margin-top:36px}
+  .person2,.person4{margin-top:28px}
+  .reviews{padding-top:68px;padding-bottom:68px}
+  .firstVisit{padding-top:82px;padding-bottom:82px}
+  .mobileBook{left:50%;right:auto;width:min(360px,calc(100% - 40px));transform:translate(-50%,18px);padding:11px 18px;border-radius:8px}
+  .mobileBook.isVisible{transform:translate(-50%,0)}
+}
