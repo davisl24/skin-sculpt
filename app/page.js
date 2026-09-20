@@ -1,15 +1,41 @@
-"use client";
-import {useEffect,useState} from "react";
 const BOOK="https://www.fresha.com/a/skin-sculpt-tukums-tukums-pasta-iela-11-sjn073od";
 const specialists=["Rūta","Endija","Veronika","Vanesa"];
-export default function Home(){const [showBook,setShowBook]=useState(false);useEffect(()=>{const onScroll=()=>{const y=window.scrollY,h=window.innerHeight,doc=document.documentElement.scrollHeight;setShowBook(y>h*.78&&y<doc-h*1.65)};onScroll();addEventListener("scroll",onScroll,{passive:true});return()=>removeEventListener("scroll",onScroll)},[]);return <main>
-<section className="heroShell"><header className="nav"><div className="logoSlot">S&S</div><nav><a href="#proceduras">Procedūras</a><a href="#par">Par mums</a><a href="#specialistes">Speciālistes</a></nav><a className="button small" href={BOOK}>Pieteikt vizīti</a><button className="menuButton" aria-label="Atvērt izvēlni"><span/><span/></button></header><div className="hero"><div className="heroVisual visual"><div className="heroOverlay"><div className="heroContent"><p className="eyebrow">ESTĒTISKĀS KOSMETOLOĢIJAS CENTRS · TUKUMS</p><h1>Rūpes par ādu<br/>un ķermeni</h1><p className="lead">Mūsdienīgas sejas un ķermeņa procedūras ādas kvalitātei, figūrai un pašsajūtai.</p><a className="button" href={BOOK}>Pieteikt vizīti</a><div className="heroTrust"><span><b>5.0</b> Fresha</span><span><b>340+</b> atsauksmes</span></div></div></div></div></div></section>
-<section className="section goals" id="proceduras"><div className="sectionIntro"><p className="eyebrow">PROCEDŪRAS</p><h2>Ko Tu vēlies<br/>uzlabot?</h2></div><div className="goalEditorial"><a className="goal goalLarge" href="#iecienitas"><div className="visual"/><h3>Sejas āda</h3><p>Ādas kvalitātei, mitrināšanai un atjaunošanai.</p></a><a className="goal goalTop" href="#iecienitas"><div className="visual"/><h3>Ķermeņa aprises</h3><p>Procedūras ķermeņa aprisēm un ādas kvalitātei.</p></a><a className="goal goalBottom" href="#iecienitas"><div className="visual"/><h3>Labsajūta</h3><p>Procedūras relaksācijai un pašsajūtai.</p></a></div></section>
-<section className="feature" id="iecienitas"><div className="featureInner"><div className="featureCopy"><p className="eyebrow">IZCELTĀ PROCEDŪRA</p><h2>Endosfēras<br/>terapija</h2><p>Ķermeņa aprisēm, ādas kvalitātei un labsajūtai.</p><div className="featureMeta"><span>no 50 €</span><a className="textLink" href="/endosfera">Uzzināt vairāk →</a></div></div><div className="featureVisual visual"/></div></section>
-<section className="section about" id="par"><div className="aboutTop"><div><p className="eyebrow">PAR SKIN & SCULPT</p><h2>Mūsdienīga pieeja<br/>skaistumkopšanai</h2></div><p className="aboutText">Skin & Sculpt ir estētiskās kosmetoloģijas centrs Tukumā, kas apvieno mūsdienīgas tehnoloģijas ar rūpīgu pieeju sejas un ķermeņa kopšanai.</p></div><div className="aboutVisual visual"/><div className="stats"><div><b>5.0</b><span>Fresha vērtējums</span></div><div><b>340+</b><span>klientu vērtējumi</span></div><div><b>4</b><span>speciālistes</span></div></div></section>
-<section className="section team" id="specialistes"><div className="teamHead"><p className="eyebrow">KOMANDA</p><h2>Iepazīsti mūsu<br/>komandu</h2></div><div className="teamEditorial">{specialists.map((name,i)=><div className={"person person"+(i+1)} key={name}><div className="portrait"/><h3>{name}</h3></div>)}</div></section>
-<section className="reviews"><div className="reviewsInner"><div className="rating"><p className="eyebrow">ATSAUKSMES</p><b>5.0</b><span>340+ klientu vērtējumi</span></div><article className="quote"><span className="quoteMark">“</span><p>Klientu pieredze runā pati par sevi</p><footer>Reālās Fresha atsauksmes pievienosim kopā ar klientu</footer></article></div></section>
-<section className="firstVisit" id="first-visit"><div><p className="eyebrow">PIRMĀ VIZĪTE</p><h2>Ar ko sākt?</h2><p>Pirmreizējā vizīte palīdzēs saprast Tavas ādas vajadzības un izvēlēties piemērotāko turpmāko kopšanu.</p><span>Konsultācija + sejas procedūra</span><strong>no 55 €</strong><a className="button" href={BOOK}>Pieteikt pirmo vizīti</a></div><div className="firstVisitVisual visual"/></section>
-<section className="section contact"><a className="map" href="https://www.google.com/maps/search/?api=1&query=Pasta+iela+11+Tukums"><span>Pasta iela 11 · Tukums</span><small>Atvērt Google Maps →</small></a><div className="contactCopy"><p className="eyebrow">APMEKLĒ MŪS</p><h2>Gaidīsim<br/>Tukumā</h2><p>Pasta iela 11<br/>Tukums</p><p><a href="tel:+37120277100">20277100</a></p><a className="button" href={BOOK}>Pieteikt vizīti</a></div></section>
-<footer className="siteFooter"><div className="logoSlot">S&S</div><div><a href="#proceduras">Procedūras</a><a href="#par">Par mums</a><a href="#specialistes">Speciālistes</a></div><div><a href="https://www.instagram.com/skinandsculpt.tukums/">Instagram</a><a href={BOOK}>Fresha</a></div><p>Pasta iela 11, Tukums<br/>© Skin & Sculpt</p></footer><a className={"mobileBook "+(showBook?"isVisible":"")} href={BOOK}>Pieteikt vizīti</a>
+const services=[
+  ["Sejas procedūras","Ādas kvalitātei, mitrināšanai un atjaunošanai.","#first-visit"],
+  ["Ķermeņa procedūras","Rūpēm par ķermeņa ādu, aprisēm un labsajūtu.","#contact"],
+  ["Endosfēras terapija","Ķermeņa aprisēm, ādas kvalitātei un labsajūtai.","/endosfera"]
+];
+export default function Home(){return <main>
+<header className="nav"><a className="brand" href="/">S&S</a><nav><a href="#proceduras">Procedūras</a><a href="#par">Par mums</a><a href="#specialistes">Speciālistes</a><a href="#atsauksmes">Atsauksmes</a></nav><a className="button small" href={BOOK}>Pieteikt vizīti</a><button className="menuButton" aria-label="Atvērt izvēlni"><span/><span/></button></header>
+
+<section className="clinicHero">
+  <div className="clinicHeroImage"/>
+  <div className="clinicHeroShade"/>
+  <div className="clinicHeroInner">
+    <p className="eyebrow">ESTĒTISKĀS KOSMETOLOĢIJAS CENTRS · TUKUMS</p>
+    <h1>Rūpes par ādu</h1>
+    <p>Mūsdienīgas sejas un ķermeņa procedūras ādas kvalitātei, figūrai un labsajūtai.</p>
+    <a className="button heroButton" href={BOOK}>Pieteikt vizīti</a>
+    <div className="heroProof"><span><b>5.0</b> Fresha</span><span><b>340+</b> atsauksmes</span><span>Tukums</span></div>
+  </div>
+</section>
+
+<section className="v2Section" id="proceduras">
+  <div className="sectionHead"><div><p className="eyebrow">PROCEDŪRAS</p><h2>Izvēlies procedūru</h2></div><p>Atrodi sev piemērotāko sejas vai ķermeņa procedūru.</p></div>
+  <div className="serviceGrid">{services.map(([title,copy,href])=><a className="serviceCard" href={href} key={title}><div className="imagePlaceholder"/><h3>{title}</h3><p>{copy}</p><span>Apskatīt →</span></a>)}</div>
+</section>
+
+<section className="proofStrip"><div><strong>5.0</strong><span>Fresha</span></div><div><strong>340+</strong><span>vērtējumi</span></div><div><strong>4</strong><span>speciālistes</span></div><div><strong>Tukums</strong><span>Pasta iela 11</span></div></section>
+
+<section className="v2Section aboutV2" id="par"><div className="imagePlaceholder aboutImage"/><div className="aboutCopy"><p className="eyebrow">PAR SKIN & SCULPT</p><h2>Par Skin & Sculpt</h2><p>Skin & Sculpt ir estētiskās kosmetoloģijas centrs Tukumā, kas apvieno mūsdienīgas tehnoloģijas ar rūpīgu pieeju sejas un ķermeņa kopšanai.</p><a className="textLink" href="#contact">Kontakti →</a></div></section>
+
+<section className="v2Section" id="specialistes"><div className="sectionHead simple"><div><p className="eyebrow">KOMANDA</p><h2>Mūsu speciālistes</h2></div></div><div className="teamGrid">{specialists.map(name=><article className="teamCard" key={name}><div className="portraitPlaceholder"/><h3>{name}</h3></article>)}</div></section>
+
+<section className="reviewsV2" id="atsauksmes"><div className="reviewsScore"><p className="eyebrow">ATSAUKSMES</p><strong>5.0</strong><p>340+ Fresha vērtējumi</p></div><div className="reviewCards">{[1,2,3].map(n=><article key={n}><div className="reviewLine"/><div className="reviewLine short"/><span>Fresha atsauksme</span></article>)}</div></section>
+
+<section className="firstVisitV2" id="first-visit"><div><p className="eyebrow">PIRMĀ VIZĪTE</p><h2>Nezini, ko izvēlēties?</h2><p>Pirmreizējā vizīte palīdzēs saprast Tavas ādas vajadzības un izvēlēties piemērotāko turpmāko kopšanu.</p><strong>Konsultācija + sejas procedūra · no 55 €</strong><a className="button" href={BOOK}>Pieteikt pirmo vizīti</a></div></section>
+
+<section className="v2Section contactV2" id="contact"><div className="contactCopy"><p className="eyebrow">APMEKLĒ MŪS</p><h2>Gaidīsim Tukumā</h2><p>Pasta iela 11<br/>Tukums</p><a href="tel:+37120277100">20277100</a><br/><a className="button contactButton" href={BOOK}>Pieteikt vizīti</a></div><a className="mapV2" href="https://www.google.com/maps/search/?api=1&query=Pasta+iela+11+Tukums"><span>Pasta iela 11 · Tukums</span><small>Atvērt Google Maps →</small></a></section>
+
+<footer className="footerV2"><a className="brand" href="/">S&S</a><div><a href="#proceduras">Procedūras</a><a href="#par">Par mums</a><a href="#specialistes">Speciālistes</a></div><div><a href="https://www.instagram.com/skinandsculpt.tukums/">Instagram</a><a href={BOOK}>Fresha</a></div><p>Pasta iela 11, Tukums<br/>© Skin & Sculpt</p></footer>
 </main>}
