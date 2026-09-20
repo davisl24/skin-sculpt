@@ -17,7 +17,7 @@ export default function Home(){return <main>
 
 <section className="v2Section teamV21" id="specialistes"><div className="sectionHead simple"><div><h2>Mūsu speciālistes</h2></div></div><div className="teamGrid">{specialists.map(name=><article className="teamCard" key={name}><div className="portraitPlaceholder"/><h3>{name}</h3></article>)}</div></section></div>
 
-<section className="reviewsV2 reviewsProofOnly" id="atsauksmes"><div className="reviewsScore"><strong>5.0</strong><p>340+ Fresha vērtējumi</p><a className="textLink" href={BOOK}>Apskatīt atsauksmes →</a></div></section>
+<section className="reviewsV2 reviewsWithCards" id="atsauksmes"><div className="reviewsScore"><strong>5.0</strong><p>340+ Fresha vērtējumi</p><a className="textLink" href={BOOK}>Apskatīt visas →</a></div><div className="reviewCards realReviews"><article><p>“Ļoti patīkama pieredze, brīnišķīga speciāliste.”</p><span>Madara S. · Fresha</span></article><article><p>“Brīnišķīga apkalpošana un patīkama atmosfēra. Paldies!”</p><span>Linda G. · Fresha</span></article><article><p>“Loti atrs un kvalitativs darbs, milzigs paldies!!”</p><span>Tīna K. · Fresha</span></article></div></section>
 
 <section className="firstVisitV2" id="first-visit"><div><h2>Nezini, ko izvēlēties?</h2><p>Pirmreizējā vizīte palīdzēs saprast Tavas ādas vajadzības un izvēlēties piemērotāko turpmāko kopšanu.</p><strong>Konsultācija + sejas procedūra · no 55 €</strong><a className="button" href={BOOK}>Pieteikt pirmo vizīti</a></div></section>
 
