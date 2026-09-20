@@ -87,3 +87,16 @@
 .mapEmbedV2{min-height:300px}
 .mapEmbedV2 iframe{height:300px}
 }
+
+/* V2.6 locked mobile hero/type/map polish */
+.mapEmbedV2{border-radius:16px;overflow:hidden;background:var(--cream)}
+.mapEmbedV2 iframe{border:0!important}
+.mapEmbedV2>a{position:static;display:inline-block;background:transparent;padding:14px 0 0;border-radius:0;font-size:13px;font-weight:600}
+@media(max-width:760px){
+.clinicHeroInner{justify-content:flex-start;padding-top:27svh;padding-bottom:28px}
+.clinicHeroInner .eyebrow{margin-bottom:14px}
+.clinicHeroInner h1{font-size:46px;font-weight:500}
+.sectionHead h2,.aboutV2 h2,.contactV2 h2,.teamCard h3,.serviceTileLabel h3,.reviewsScore strong,.realReviews article p,.firstVisitV2 h2,.mapV2 span{font-weight:500}
+.mapEmbedV2{min-height:0;border-radius:16px}
+.mapEmbedV2 iframe{height:300px}
+}
