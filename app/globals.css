@@ -248,3 +248,22 @@
 .mapEmbedV2{border-radius:18px}
 .mapEmbedV2 iframe{height:270px}
 }
+
+/* V2.9 final mobile QA */
+.reviewsScoreMobile{display:none}
+@media(max-width:760px){
+/* Proof strip: ensure first item is fully visible on load */
+.proofStrip{padding-left:20px;padding-right:20px;scroll-padding-left:20px}
+.proofStrip div{flex-basis:40vw;min-width:148px;margin-right:20px;padding-right:20px}
+
+/* Team: shorter portraits for a tighter mobile rhythm */
+.portraitPlaceholder{aspect-ratio:4/5}
+.teamGrid{gap:20px 16px}
+
+/* Reviews: compact repeated proof on mobile */
+.reviewsScoreDesktop{display:none}
+.reviewsScoreMobile{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.reviewsScoreMobile strong{font:500 34px/1 "Bodoni Moda",serif}
+.reviewsScoreMobile span{font:500 15px/1.35 Manrope,Arial,sans-serif;color:var(--ink)}
+.reviewsScore .textLink{display:inline-block;margin-top:14px}
+}
