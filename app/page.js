@@ -10,48 +10,16 @@ const services=[
 ];
 
 const guideOptions=[
-  {
-    key:"dry",
-    tab:"Sausa āda",
-    title:"Sejas procedūras",
-    text:"Ja āda jūtas sausa, jutīga vai blāva, sāc ar sejas procedūrām un izvēlies piemērotāko kopā ar speciālisti.",
-    cta:"Skatīt sejas procedūras",
-    href:"#proceduras",
-    benefits:["Mitrināšana","Ādas komforts","Svaigāks izskats"]
-  },
-  {
-    key:"acne",
-    tab:"Akne / poras",
-    title:"Sāc ar konsultāciju",
-    text:"Ja satrauc akne, poras vai nevienmērīga tekstūra, vispirms izvērtē ādas stāvokli un tikai tad izvēlies procedūru.",
-    cta:"Pieteikt konsultāciju",
-    href:"#first-visit",
-    benefits:["Ādas izvērtēšana","Piemērots virziens","Skaidrs nākamais solis"]
-  },
-  {
-    key:"body",
-    tab:"Ķermenis",
-    title:"Ķermeņa procedūras",
-    text:"Ja mērķis ir ķermeņa aprises, tonuss vai labsajūta, apskati ķermeņa procedūras un Endosfēras terapiju.",
-    cta:"Skatīt ķermeņa procedūras",
-    href:"/endosfera",
-    benefits:["Aprises","Tonuss","Labsajūta"]
-  },
-  {
-    key:"unsure",
-    tab:"Nezinu",
-    title:"Pirmā vizīte",
-    text:"Ja vēl nezini, ko izvēlēties, sāc ar pirmo vizīti — speciāliste palīdzēs saprast vajadzības un piemērotāko nākamo soli.",
-    cta:"Pieteikt pirmo vizīti",
-    href:"#first-visit",
-    benefits:["Konsultācija","Individuāla pieeja","Mazāk minēšanas"]
-  }
+  {key:"dry",tab:"Sausa āda",title:"Sejas procedūras",text:"Piemērotas sausai, jutīgai vai blāvai ādai.",cta:"Skatīt sejas procedūras",href:"#proceduras"},
+  {key:"acne",tab:"Akne / poras",title:"Konsultācija",text:"Sāc ar ādas stāvokļa izvērtēšanu.",cta:"Pieteikt konsultāciju",href:"#first-visit"},
+  {key:"body",tab:"Ķermenis",title:"Ķermeņa procedūras",text:"Aprisēm, tonusam un labsajūtai.",cta:"Skatīt ķermeņa procedūras",href:"/endosfera"},
+  {key:"unsure",tab:"Nezinu",title:"Pirmā vizīte",text:"Speciāliste palīdzēs saprast, ar ko sākt.",cta:"Pieteikt pirmo vizīti",href:"#first-visit"}
 ];
 export default function Home(){const [reviewProgress,setReviewProgress]=useState(0);const [proofProgress,setProofProgress]=useState(0);const [activeGuide,setActiveGuide]=useState("dry");const guide=guideOptions.find(x=>x.key===activeGuide)||guideOptions[0];const track=(e,setter)=>{const el=e.currentTarget;const max=el.scrollWidth-el.clientWidth;setter(max>0?el.scrollLeft/max:0)};return <main>
 <header className="nav"><a className="brand" href="/">S&S</a><nav><a href="#proceduras">Procedūras</a><a href="#par">Par mums</a><a href="#specialistes">Speciālistes</a><a href="#atsauksmes">Atsauksmes</a></nav><a className="button small" href={BOOK}>Pieteikt vizīti</a><button className="menuButton" aria-label="Atvērt izvēlni"><span/><span/></button></header>
 <section className="clinicHero"><div className="clinicHeroImage"/><div className="clinicHeroShade"/><div className="clinicHeroInner"><p className="eyebrow">ESTĒTISKĀS KOSMETOLOĢIJAS CENTRS · TUKUMS</p><h1>Rūpes par ādu</h1><p>Mūsdienīgas sejas un ķermeņa procedūras ādas kvalitātei, figūrai un labsajūtai.</p><a className="button heroButton" href={BOOK}>Pieteikt vizīti</a></div></section>
 
-<section className="decisionHelper decisionTabs"><div className="decisionInner"><p className="eyebrow">SĀC ŠEIT</p><h2>Nezini, ar ko sākt?</h2><p className="decisionIntro">Izvēlies sev tuvāko situāciju — parādīsim piemērotāko nākamo soli.</p><div className="guideTabs" role="tablist" aria-label="Izvēlies situāciju">{guideOptions.map(item=><button key={item.key} className={activeGuide===item.key?"active":""} onClick={()=>setActiveGuide(item.key)} role="tab" aria-selected={activeGuide===item.key}>{item.tab}</button>)}</div><article className="guideResult"><div className="guideCopy"><p className="eyebrow">IESAKĀM</p><h3>{guide.title}</h3><p>{guide.text}</p><a className="button guideButton" href={guide.href}>{guide.cta} →</a></div><div className="guideVisual" aria-hidden="true"></div><div className="guideBenefits">{guide.benefits.map(item=><span key={item}>{item}</span>)}</div></article></div></section>
+<section className="decisionHelper decisionTabs"><div className="decisionInner"><p className="eyebrow">SĀC ŠEIT</p><h2>Nezini, ar ko sākt?</h2><p className="decisionIntro">Izvēlies sev tuvāko situāciju.</p><div className="guideTabs" role="tablist" aria-label="Izvēlies situāciju">{guideOptions.map(item=><button key={item.key} className={activeGuide===item.key?"active":""} onClick={()=>setActiveGuide(item.key)} role="tab" aria-selected={activeGuide===item.key}>{item.tab}</button>)}</div><article className="guideResultCompact"><p className="eyebrow">IESAKĀM</p><h3>{guide.title}</h3><p>{guide.text}</p><a className="button guideButton" href={guide.href}>{guide.cta} →</a></article></div></section>
 
 <section className="v2Section proceduresV21" id="proceduras"><div className="sectionHead"><div><h2>Procedūras</h2></div><p>Apskati visas sejas un ķermeņa procedūras.</p></div><div className="serviceTiles">{services.map(([title,href])=><a className="serviceTile" href={href} key={title}><div className="serviceTileShade"/><div className="serviceTileLabel"><h3>{title}</h3><span>→</span></div></a>)}</div></section>
 
