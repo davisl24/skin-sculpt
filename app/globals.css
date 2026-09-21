@@ -267,3 +267,51 @@
 .reviewsScoreMobile span{font:500 15px/1.35 Manrope,Arial,sans-serif;color:var(--ink)}
 .reviewsScore .textLink{display:inline-block;margin-top:14px}
 }
+
+/* V2.10 two-font system + About mobile cohesion */
+@media(max-width:760px){
+/* Exactly two typefaces: Bodoni for brand moments, Manrope for utility/content */
+.clinicHeroInner h1,
+.aboutV2 h2,
+.reviewsScore strong,
+.firstVisitV2 h2,
+.contactV2 h2,
+.proofStrip strong{
+  font-family:"Bodoni Moda",serif;
+  font-weight:500;
+}
+
+.nav,
+.eyebrow,
+.sectionHead h2,
+.sectionHead>p,
+.serviceTileLabel h3,
+.serviceTileLabel span,
+.proofStrip span,
+.aboutCopy>p:not(.eyebrow),
+.textLink,
+.teamV21 h2,
+.teamCard h3,
+.reviewsScore p,
+.reviewsScore span,
+.realReviews article p,
+.realReviews article span,
+.firstVisitV2 p,
+.firstVisitV2 strong,
+.contactCopy,
+.button,
+.footerV2{
+  font-family:Manrope,Arial,sans-serif;
+}
+
+/* About: image + copy should read as one component */
+.aboutV2{gap:26px}
+.aboutV2 .aboutImage{order:1;margin-bottom:0}
+.aboutV2 .aboutCopy{order:2}
+.aboutV2 .aboutCopy .eyebrow{margin-bottom:12px}
+.aboutV2 h2{margin-bottom:0}
+.aboutCopy>p:not(.eyebrow){margin-top:18px;margin-bottom:18px}
+
+/* Team heading lighter and less dominant */
+.teamV21 .sectionHead h2{font-size:29px;line-height:1.08;font-weight:600}
+}
