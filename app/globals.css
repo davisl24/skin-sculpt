@@ -465,3 +465,149 @@
   font-weight:500;
 }
 }
+
+/* V2.14 unified typography + professional section presentation */
+
+/* Global type system: one heading font, one body/UI font */
+h1,h2,h3,
+.sectionHead h2,
+.aboutV2 h2,
+.firstVisitV2 h2,
+.contactV2 h2,
+.decisionInner h2,
+.decisionScenarios strong,
+.serviceTileLabel h3,
+.teamCard h3,
+.reviewsScore strong,
+.proofStrip strong,
+.mapV2 span{
+  font-family:"Cormorant Garamond",serif !important;
+  font-weight:500 !important;
+  letter-spacing:-.035em;
+}
+
+body,
+p,small,span,a,button,
+.eyebrow,
+.sectionHead>p,
+.proofStrip span,
+.aboutCopy>p:not(.eyebrow),
+.textLink,
+.reviewsScore p,
+.reviewsScore span,
+.realReviews article p,
+.realReviews article span,
+.firstVisitV2 p,
+.firstVisitV2 strong,
+.contactCopy,
+.button,
+.footerV2{
+  font-family:Montserrat,Arial,sans-serif !important;
+}
+
+/* Consistent heading scale across desktop */
+.sectionHead h2,
+.aboutV2 h2,
+.contactV2 h2,
+.decisionInner h2{
+  font-size:clamp(46px,4.4vw,58px);
+  line-height:1.02;
+}
+.firstVisitV2 h2{font-size:clamp(44px,4.2vw,56px);line-height:1.02}
+.teamV21 .sectionHead h2{font-size:clamp(42px,4vw,54px)}
+.serviceTileLabel h3{font-size:28px;line-height:1.05}
+
+/* Decision helper: editorial, cleaner, less list-like */
+.decisionHelper{padding:110px 24px 70px}
+.decisionInner{max-width:1060px}
+.decisionInner .eyebrow{margin-bottom:18px}
+.decisionIntro{max-width:560px;margin:22px auto 54px;font-size:16px;line-height:1.65}
+.decisionScenarios{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0 64px;
+  border-top:1px solid var(--line);
+}
+.decisionScenarios a{
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:start;
+  gap:24px;
+  padding:34px 0;
+  border-bottom:1px solid var(--line);
+}
+.decisionScenarios strong{
+  font-size:32px;
+  line-height:1.08;
+}
+.decisionScenarios small{
+  display:block;
+  margin-top:10px;
+  font-size:14px;
+  line-height:1.55;
+  color:var(--muted);
+}
+.decisionScenarios b{
+  padding-top:6px;
+  font-size:22px;
+  font-weight:500;
+}
+
+/* Procedures: same visual language, cleaner hierarchy */
+.proceduresV21 .sectionHead h2{font-size:clamp(46px,4.4vw,58px)}
+.proceduresV21 .sectionHead>p{font-size:15px}
+.serviceTile{border-radius:12px}
+.serviceTileLabel{padding:24px}
+
+/* About / Team / Reviews use the same heading language */
+.teamCard h3{font-size:24px;line-height:1.1}
+.realReviews article p{
+  font-family:Montserrat,Arial,sans-serif !important;
+  letter-spacing:-.01em;
+}
+
+/* Mobile */
+@media(max-width:760px){
+  h1,h2,h3,
+  .sectionHead h2,
+  .aboutV2 h2,
+  .firstVisitV2 h2,
+  .contactV2 h2,
+  .decisionInner h2,
+  .decisionScenarios strong,
+  .serviceTileLabel h3,
+  .teamCard h3{
+    font-family:"Cormorant Garamond",serif !important;
+    font-weight:500 !important;
+  }
+
+  .decisionHelper{padding:88px 20px 58px}
+  .decisionInner h2{font-size:40px;line-height:1.02}
+  .decisionIntro{max-width:320px;margin:18px auto 42px;font-size:15px}
+  .decisionScenarios{
+    display:block;
+    border-top:1px solid var(--line);
+  }
+  .decisionScenarios a{
+    padding:26px 0;
+    gap:16px;
+  }
+  .decisionScenarios strong{
+    font-size:28px;
+    line-height:1.08;
+  }
+  .decisionScenarios small{
+    margin-top:8px;
+    font-size:14px;
+  }
+  .decisionScenarios b{font-size:20px;padding-top:4px}
+
+  .proceduresV21 .sectionHead h2{font-size:40px}
+  .proceduresV21 .sectionHead>p{font-size:15px;line-height:1.55}
+  .serviceTileLabel h3{font-size:26px}
+  .aboutV2 h2{font-size:40px}
+  .teamV21 .sectionHead h2{font-size:38px}
+  .teamCard h3{font-size:22px}
+  .firstVisitV2 h2{font-size:38px}
+  .contactV2 h2{font-size:40px}
+}
