@@ -611,3 +611,38 @@ p,small,span,a,button,
   .firstVisitV2 h2{font-size:38px}
   .contactV2 h2{font-size:40px}
 }
+
+/* V2.15 guidance variant A — chips + one focused result */
+.decisionTabs{padding:112px 24px 86px}
+.decisionTabs .decisionInner{max-width:1040px}
+.guideTabs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:34px auto 30px}
+.guideTabs button{appearance:none;border:1px solid var(--line);background:transparent;color:var(--muted);font:500 13px/1 Montserrat,Arial,sans-serif;padding:13px 18px;border-radius:999px;cursor:pointer}
+.guideTabs button.active{background:var(--sand);border-color:var(--sand);color:var(--ink)}
+.guideResult{display:grid;grid-template-columns:1.05fr .95fr;grid-template-rows:auto auto;overflow:hidden;border-radius:18px;background:var(--cream);min-height:470px}
+.guideCopy{padding:52px 44px 28px;align-self:center}
+.guideCopy .eyebrow{margin-bottom:18px}
+.guideCopy h3{font:500 52px/1 "Cormorant Garamond",serif!important;letter-spacing:-.04em;margin:0 0 20px}
+.guideCopy>p:not(.eyebrow){font:400 15px/1.7 Montserrat,Arial,sans-serif!important;color:var(--muted);max-width:440px;margin:0 0 28px}
+.guideButton{font-family:Montserrat,Arial,sans-serif!important}
+.guideVisual{background:linear-gradient(180deg,#F4EEE8 0%,#E5DDD4 100%);min-height:390px}
+.guideBenefits{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:22px 34px 26px;border-top:1px solid rgba(36,33,31,.08)}
+.guideBenefits span{font:500 12px/1.35 Montserrat,Arial,sans-serif!important;color:var(--ink);position:relative;padding-left:18px}
+.guideBenefits span:before{content:"";position:absolute;left:0;top:.35em;width:7px;height:7px;border:1px solid var(--ink);border-radius:50%}
+
+@media(max-width:760px){
+  .decisionTabs{padding:88px 20px 70px}
+  .decisionTabs .decisionInner h2{font-size:40px}
+  .decisionTabs .decisionIntro{max-width:320px;margin:18px auto 30px}
+  .guideTabs{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;margin:0 -20px 22px;padding:0 20px 4px;scrollbar-width:none}
+  .guideTabs::-webkit-scrollbar{display:none}
+  .guideTabs button{flex:0 0 auto;padding:12px 16px;font-size:12px}
+  .guideResult{grid-template-columns:1.08fr .92fr;grid-template-rows:auto auto;min-height:420px;border-radius:16px}
+  .guideCopy{padding:34px 24px 22px;align-self:center}
+  .guideCopy .eyebrow{font-size:9px;margin-bottom:14px}
+  .guideCopy h3{font-size:36px;line-height:1.02;margin-bottom:16px}
+  .guideCopy>p:not(.eyebrow){font-size:13px;line-height:1.55;margin-bottom:22px}
+  .guideButton{padding:12px 16px;font-size:12px}
+  .guideVisual{min-height:330px}
+  .guideBenefits{grid-template-columns:1fr;gap:8px;padding:18px 22px}
+  .guideBenefits span{font-size:11px}
+}
