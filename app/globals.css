@@ -704,3 +704,24 @@ p,small,span,a,button,
     justify-content:center;
   }
 }
+
+/* V2.17 compact guide recommendation card */
+@media(max-width:760px){
+  .guideResultCompact{
+    padding:24px 22px 22px;
+  }
+  .guideResultCompact h3{
+    font-size:29px;
+    line-height:1.04;
+    margin-bottom:8px;
+  }
+  .guideResultCompact>p:not(.eyebrow){
+    margin-bottom:16px;
+  }
+  .guideResultCompact .guideButton{
+    width:auto;
+    padding:11px 15px;
+    font-size:12px;
+    justify-content:flex-start;
+  }
+}
