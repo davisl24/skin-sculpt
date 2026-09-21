@@ -646,3 +646,61 @@ p,small,span,a,button,
   .guideBenefits{grid-template-columns:1fr;gap:8px;padding:18px 22px}
   .guideBenefits span{font-size:11px}
 }
+
+/* V2.16 simplified guidance flow */
+.guideResultCompact{
+  max-width:760px;
+  margin:0 auto;
+  padding:42px 44px;
+  border-radius:18px;
+  background:var(--cream);
+  text-align:left;
+}
+.guideResultCompact .eyebrow{margin-bottom:14px}
+.guideResultCompact h3{
+  font:500 48px/1.02 "Cormorant Garamond",serif!important;
+  letter-spacing:-.04em;
+  margin:0 0 14px;
+}
+.guideResultCompact>p:not(.eyebrow){
+  margin:0 0 24px;
+  color:var(--muted);
+  font:400 15px/1.6 Montserrat,Arial,sans-serif!important;
+}
+.guideResultCompact .guideButton{margin-top:2px}
+
+@media(max-width:760px){
+  .decisionTabs{padding:82px 20px 64px}
+  .decisionTabs .decisionIntro{margin-bottom:24px}
+  .guideTabs{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin:0 0 22px;
+    padding:0;
+    overflow:visible;
+  }
+  .guideTabs button{
+    width:100%;
+    padding:13px 12px;
+    text-align:center;
+    font-size:12px;
+  }
+  .guideResultCompact{
+    padding:30px 24px;
+    border-radius:16px;
+  }
+  .guideResultCompact h3{
+    font-size:34px;
+    margin-bottom:10px;
+  }
+  .guideResultCompact>p:not(.eyebrow){
+    font-size:14px;
+    line-height:1.5;
+    margin-bottom:20px;
+  }
+  .guideResultCompact .guideButton{
+    width:100%;
+    justify-content:center;
+  }
+}
