@@ -426,3 +426,42 @@
 /* Footer: slightly more calm spacing */
 .footerV2{padding-top:56px;padding-bottom:58px}
 }
+
+/* V2.13 problem-led decision helper */
+.decisionScenarios a{align-items:start}
+.decisionScenarios strong{max-width:680px}
+.decisionScenarios small{max-width:660px}
+@media(max-width:760px){
+.decisionHelper{padding-top:96px;padding-bottom:48px}
+.decisionIntro{max-width:300px;margin-bottom:42px}
+.decisionScenarios{display:grid;gap:30px}
+.decisionScenarios a{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:18px;
+  padding:0 0 30px;
+  border-bottom:1px solid var(--line);
+}
+.decisionScenarios a:last-child{border-bottom:0;padding-bottom:0}
+.decisionScenarios strong{
+  display:block;
+  font-family:"Cormorant Garamond",serif;
+  font-size:25px;
+  line-height:1.08;
+  font-weight:500;
+  letter-spacing:-.02em;
+}
+.decisionScenarios small{
+  display:block;
+  margin-top:10px;
+  font-family:Montserrat,Arial,sans-serif;
+  font-size:14px;
+  line-height:1.6;
+  color:var(--muted);
+}
+.decisionScenarios b{
+  padding-top:3px;
+  font-size:20px;
+  font-weight:500;
+}
+}
