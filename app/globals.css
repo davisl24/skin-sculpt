@@ -340,3 +340,89 @@
 .decisionList small{font-size:13px}
 .proceduresV21{padding-top:56px}
 }
+
+/* V2.12 clean Apple editorial spacing pass */
+@media(max-width:760px){
+
+/* Hero: keep as a standalone moment with more air before the next section */
+.clinicHero{margin-bottom:0}
+
+/* Guidance: remove visual clutter, increase breathing room */
+.decisionHelper{padding:92px 20px 36px}
+.decisionInner h2{font-size:36px;line-height:1.04}
+.decisionIntro{max-width:320px;margin:18px auto 38px;font-size:15px;line-height:1.65}
+.decisionList{border-top:0}
+.decisionList a{
+  grid-template-columns:1fr auto;
+  gap:18px;
+  padding:18px 0;
+  border-bottom:0;
+}
+.decisionIcon{display:none}
+.decisionList strong{font-size:18px}
+.decisionList small{margin-top:4px;font-size:13px}
+.decisionList b{font-size:18px}
+
+/* Procedures: more separation, less catalogue density */
+.proceduresV21{
+  padding-top:88px;
+  padding-bottom:96px;
+}
+.proceduresV21 .sectionHead{margin-bottom:38px}
+.proceduresV21 .sectionHead h2{font-size:30px}
+.serviceTiles{gap:22px}
+.serviceTile{height:220px}
+.serviceTileLabel{padding:20px 22px}
+
+/* Proof strip: its own quiet trust moment */
+.proofStripWrap{padding-top:18px;padding-bottom:34px}
+.proofStrip{
+  padding-top:36px;
+  padding-bottom:30px;
+}
+.proofProgress{margin-top:10px}
+
+/* About: give it more room and keep image + copy cohesive */
+.storyZone .aboutV2{
+  padding-top:104px;
+  padding-bottom:106px;
+}
+.aboutV2{gap:30px}
+.aboutV2 .aboutImage{border-radius:14px}
+.aboutCopy>p:not(.eyebrow){margin-top:20px;margin-bottom:22px}
+
+/* Team: separate idea from About, not glued to it */
+.teamV21{
+  padding-top:82px;
+  padding-bottom:110px;
+}
+.teamV21 .sectionHead{margin-bottom:38px}
+.teamGrid{gap:28px 16px}
+
+/* Reviews: isolated editorial block with more outer space */
+.reviewsV2{
+  padding-top:88px;
+  padding-bottom:92px;
+}
+.reviewCards{margin-top:34px}
+.reviewProgress{margin-top:22px}
+
+/* First visit CTA: keep focused, not crowded */
+.firstVisitV2{
+  padding-top:84px;
+  padding-bottom:84px;
+}
+.firstVisitV2 p:not(.eyebrow){max-width:520px}
+
+/* Contact: more breathing room before map */
+.contactV2{
+  padding-top:98px;
+  padding-bottom:100px;
+  gap:44px;
+}
+.mapEmbedV2{border-radius:20px}
+.mapEmbedV2 iframe{height:280px}
+
+/* Footer: slightly more calm spacing */
+.footerV2{padding-top:56px;padding-bottom:58px}
+}
