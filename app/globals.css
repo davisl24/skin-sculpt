@@ -315,3 +315,28 @@
 /* Team heading lighter and less dominant */
 .teamV21 .sectionHead h2{font-size:29px;line-height:1.08;font-weight:600}
 }
+
+/* V2.11 decision helper — variant C */
+.decisionHelper{background:var(--paper);padding:86px 24px 10px}
+.decisionInner{max-width:900px;margin:auto;text-align:center}
+.decisionInner h2{font:500 clamp(42px,4vw,54px)/1.04 "Cormorant Garamond",serif;letter-spacing:-.035em;margin:0}
+.decisionIntro{max-width:620px;margin:18px auto 34px;color:var(--muted);font-size:15px;line-height:1.7}
+.decisionList{border-top:1px solid var(--line)}
+.decisionList a{display:grid;grid-template-columns:52px 1fr auto;gap:18px;align-items:center;text-align:left;padding:22px 0;border-bottom:1px solid var(--line)}
+.decisionIcon{width:44px;height:44px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:0}
+.decisionIcon:after{content:"";width:16px;height:16px;border:1.5px solid var(--ink);border-radius:50%}
+.decisionList strong{display:block;font:500 23px/1.1 "Cormorant Garamond",serif}
+.decisionList small{display:block;margin-top:5px;color:var(--muted);font-size:13px;line-height:1.45}
+.decisionList b{font-size:18px;font-weight:500}
+@media(max-width:760px){
+.decisionHelper{padding:58px 20px 22px}
+.decisionInner{text-align:left}
+.decisionInner .eyebrow{text-align:center}
+.decisionInner h2{text-align:center;font-size:34px}
+.decisionIntro{text-align:center;font-size:15px;margin:16px auto 28px;max-width:330px}
+.decisionList a{grid-template-columns:48px 1fr auto;gap:14px;padding:18px 0}
+.decisionIcon{width:42px;height:42px}
+.decisionList strong{font-family:Montserrat,Arial,sans-serif;font-size:18px;font-weight:600}
+.decisionList small{font-size:13px}
+.proceduresV21{padding-top:56px}
+}
