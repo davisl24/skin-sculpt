@@ -725,3 +725,75 @@ p,small,span,a,button,
     justify-content:flex-start;
   }
 }
+
+/* V2.18 guidance visual demo structure */
+.guideResultVisual{
+  max-width:860px;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  grid-template-rows:auto auto;
+  padding:0;
+  overflow:hidden;
+}
+.guideResultText{padding:42px 40px 32px;align-self:center}
+.guideResultText .eyebrow{margin-bottom:14px}
+.guideResultText h3{
+  font:500 48px/1.02 "Cormorant Garamond",serif!important;
+  letter-spacing:-.04em;
+  margin:0 0 14px;
+}
+.guideResultText>p:not(.eyebrow){
+  margin:0 0 24px;
+  color:var(--muted);
+  font:400 15px/1.6 Montserrat,Arial,sans-serif!important;
+}
+.guideResultImage{
+  min-height:360px;
+  background:linear-gradient(180deg,#F4EEE8 0%,#E3D8CF 100%);
+}
+.guideResultBenefits{
+  grid-column:1/-1;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  padding:18px 28px 20px;
+  border-top:1px solid rgba(36,33,31,.08);
+}
+.guideResultBenefits span{
+  font:500 12px/1.35 Montserrat,Arial,sans-serif!important;
+  position:relative;
+  padding-left:16px;
+}
+.guideResultBenefits span:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.35em;
+  width:6px;height:6px;
+  border-radius:50%;
+  background:#A99D90;
+}
+
+@media(max-width:760px){
+  .guideTabs button{font-size:11.5px}
+  .guideResultVisual{
+    grid-template-columns:1.15fr .85fr;
+    grid-template-rows:auto auto;
+    border-radius:16px;
+  }
+  .guideResultText{padding:26px 20px 22px}
+  .guideResultText h3{font-size:31px;margin-bottom:10px}
+  .guideResultText>p:not(.eyebrow){font-size:13px;line-height:1.5;margin-bottom:18px}
+  .guideResultText .guideButton{
+    width:auto;
+    padding:11px 14px;
+    font-size:11.5px;
+  }
+  .guideResultImage{min-height:300px}
+  .guideResultBenefits{
+    grid-template-columns:1fr;
+    gap:7px;
+    padding:16px 20px 18px;
+  }
+  .guideResultBenefits span{font-size:11.5px}
+}
