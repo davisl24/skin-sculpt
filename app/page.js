@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const BOOK="https://www.fresha.com/a/skin-sculpt-tukums-tukums-pasta-iela-11-sjn073od";
 const specialists=["Rūta","Endija","Veronika","Vanesa"];
@@ -15,7 +15,41 @@ const guideOptions=[
   {key:"body",tab:"Aprises / tonuss",title:"Ķermeņa procedūras",text:"Aprisēm, tonusam un labsajūtai.",cta:"Skatīt ķermeņa procedūras",href:"/endosfera"},
   {key:"unsure",tab:"Nezinu",title:"Pirmā vizīte",text:"Speciāliste palīdzēs saprast, ar ko sākt.",cta:"Pieteikt pirmo vizīti",href:"#first-visit"}
 ];
-export default function Home(){const [reviewProgress,setReviewProgress]=useState(0);const [proofProgress,setProofProgress]=useState(0);const [activeGuide,setActiveGuide]=useState("dry");const guide=guideOptions.find(x=>x.key===activeGuide)||guideOptions[0];const track=(e,setter)=>{const el=e.currentTarget;const max=el.scrollWidth-el.clientWidth;setter(max>0?el.scrollLeft/max:0)};return <main>
+export default function Home(){const [reviewProgress,setReviewProgress]=useState(0);const [proofProgress,setProofProgress]=useState(0);const [activeGuide,setActiveGuide]=useState("dry");const guide=guideOptions.find(x=>x.key===activeGuide)||guideOptions[0];const track=(e,setter)=>{const el=e.currentTarget;const max=el.scrollWidth-el.clientWidth;setter(max>0?el.scrollLeft/max:0)};
+
+useEffect(()=>{
+  const duration=1050;
+  const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+  const handleAnchor=(event)=>{
+    const anchor=event.target.closest('a[href^="#"]');
+    if(!anchor)return;
+    const id=anchor.getAttribute("href");
+    if(!id||id==="#")return;
+    const target=document.querySelector(id);
+    if(!target)return;
+    event.preventDefault();
+    if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+      target.scrollIntoView();
+      history.pushState(null,"",id);
+      return;
+    }
+    const start=window.scrollY;
+    const end=target.getBoundingClientRect().top+window.scrollY;
+    const distance=end-start;
+    const started=performance.now();
+    const step=(now)=>{
+      const progress=Math.min((now-started)/duration,1);
+      window.scrollTo(0,start+distance*ease(progress));
+      if(progress<1)requestAnimationFrame(step);
+      else history.pushState(null,"",id);
+    };
+    requestAnimationFrame(step);
+  };
+  document.addEventListener("click",handleAnchor);
+  return()=>document.removeEventListener("click",handleAnchor);
+},[]);
+
+return <main>
 <header className="nav"><a className="brand" href="/">S&S</a><nav><a href="#proceduras">Procedūras</a><a href="#par">Par mums</a><a href="#specialistes">Speciālistes</a><a href="#atsauksmes">Atsauksmes</a></nav><a className="button small" href={BOOK}>Pieteikt vizīti</a><button className="menuButton" aria-label="Atvērt izvēlni"><span/><span/></button></header>
 <section className="clinicHero"><div className="clinicHeroImage"/><div className="clinicHeroShade"/><div className="clinicHeroInner"><p className="eyebrow">ESTĒTISKĀS KOSMETOLOĢIJAS CENTRS · TUKUMS</p><h1>Rūpes par ādu</h1><p>Mūsdienīgas sejas un ķermeņa procedūras ādas kvalitātei, figūrai un labsajūtai.</p><a className="button heroButton" href={BOOK}>Pieteikt vizīti</a></div></section>
 
